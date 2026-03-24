@@ -1,11 +1,14 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 const Product = () => {
     const [details, setDetails] = useState({});
+    const params = useParams();
+    console.log(params.id);
     useEffect(()=>{
         const FetchData = async ()=>{
             try {
-                let response =  await axios.get('https://dummyjson.com/products/1')
+                let response =  await axios.get(`https://dummyjson.com/products/${params.id}`)
                 console.log(response.data);
                 setDetails(response.data);
             } catch (error) {
@@ -14,14 +17,14 @@ const Product = () => {
         }
         FetchData();
 
-    }, [])
+    }, [params.id])
   return (
     <>
       <section className="w-full h-screen flex items-center justify-center p-20">
         {/* image */}
         <div className="w-1/2 relative flex items-center justify-center">
           <img
-            src={details.images}
+            src={details.images?.[0]}
             alt="image"
           />
 
