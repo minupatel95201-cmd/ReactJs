@@ -1,5 +1,6 @@
 import { Heart, Menu, Search, ShoppingBag, User2, X } from 'lucide-react'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     const [showMenu, setShowMenu] = useState(false)
@@ -15,10 +16,11 @@ const NavBar = () => {
             </div>
            {/* Links */}
             <ul className='flex justify-center items-center gap-x-4 text-lg font-normal'>
-                <li><a href="">Home</a></li>
-                <li><a href="">Collection</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
+                 <li><Link to="/">Home</Link></li>
+                 <li><Link to="/collection">Collection</Link></li>
+                <li><Link to="/shop">Shop</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
             </ul>
             {/* Icons */}
             <div className='flex items-center justify-center gap-x-6'>
@@ -55,10 +57,11 @@ const NavBar = () => {
 
             {/* Links */}
                 <ul className='flex justify-center items-center gap-y-10 text-3xl font-semibold flex-col'>
-                <li><a href="">Home</a></li>
-                <li><a href="">Collection</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/collection">Collection</Link></li>
+                <li><Link to="/shop">Shop</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
             </ul>
             </div>
         </section>)}

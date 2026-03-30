@@ -5,6 +5,8 @@ import DeatilsBar from "../Components/Home/DetailsBar";
 import CategoryBar from "../Components/Home/CategorayBar";
 import Offer from "../Components/Home/Offer";
 import DealBar from "../Components/Home/DealBar";
+import DescountBar from "../Components/Home/DescountBar";
+import NewsLetter from "../Components/Home/NewsLetter";
 
 const Home = () => {
   return (
@@ -14,9 +16,11 @@ const Home = () => {
       <CategoryBar />
       <ProductBar />
       <Offer />
-      
-
       <DealBar />
+      <DescountBar/>
+      <NewsLetter/>
+
+      
     </>
   );
 };
