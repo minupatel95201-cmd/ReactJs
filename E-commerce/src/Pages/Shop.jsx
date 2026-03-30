@@ -2,22 +2,33 @@ import { SearchIcon } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import ProductCard from "../ui/ProductCard";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
+   const parmas = useParams();
     useEffect(()=>{
      const FetchAllProducts = async()=>{
-        try {
-           let response = await axios.get('https://dummyjson.com/products');
+       if (parmas.collection) {
+         try {
+           let response = await axios.get(`https://dummyjson.com/products/category/${parmas.collection}`);
            console.log(response.data.products); 
            setProducts(response.data.products);
         } catch (error) {
            console.log(error) 
         }
-     }
+       } else {
+         try {
+           let response = await axios.get(`https://dummyjson.com/products`);
+           console.log(response.data.products); 
+           setProducts(response.data.products);
+        } catch (error) {
+           console.log(error) 
+        }
+       }
+     };
      FetchAllProducts();
-    },[])
+    },[parmas.collection])
   return (
     <>
       <section>

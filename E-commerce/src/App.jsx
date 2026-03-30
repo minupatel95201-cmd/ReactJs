@@ -7,6 +7,8 @@ import NavBar from './Layout/NavBar'
 import Footer from './Layout/Footer'
 import Shop from './Pages/Shop'
 import Collection from './Pages/Collection'
+import About from './Pages/AboutUs'
+import ContactUs from './Pages/ContactUs'
 
 const App = () => {
   return (
@@ -19,6 +21,9 @@ const App = () => {
       {/* <Route path='/Chatgpt' element={<Chatgpt />}></Route> */}
       <Route path='/collection' element={<Collection/>}></Route>
       <Route path='/shop' element={<Shop/>}></Route>
+      <Route path='/shop/:collection' element={<Shop/>}></Route>
+      <Route path='/about' element={<About/>}></Route>
+      <Route path='/contact' element={<ContactUs/>}></Route>
     </Routes>
     <Footer />
     </>

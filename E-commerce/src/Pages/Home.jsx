@@ -7,6 +7,7 @@ import Offer from "../Components/Home/Offer";
 import DealBar from "../Components/Home/DealBar";
 import DescountBar from "../Components/Home/DescountBar";
 import NewsLetter from "../Components/Home/NewsLetter";
+import AboutUs from "./AboutUs";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <DealBar />
       <DescountBar/>
       <NewsLetter/>
+      <AboutUs/>
 
       
     </>
